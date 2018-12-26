@@ -1,15 +1,11 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
+//Change the state of the burger
 $(function() {
   $(".devour").on("click", function(event) {
     var id = $(this).data("id");
-   
-
     var newDevourState = {
       devoured: true
     };
-
-    
-
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
@@ -23,10 +19,11 @@ $(function() {
     );
   });
 
+  //Create New Burger
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    //console.log ("Name" , newBurger);
+  
     var newBurger = {
       name: $("#bg").val().trim(),
      
@@ -38,18 +35,16 @@ $(function() {
       data: newBurger
     }).then(
       function() {
-        console.log("created new burger");
+     
         // Reload the page to get the updated list
         location.reload();
       }
     );
   });
 
+  //Delete Burger
   $(".delete").on("click", function(event) {
     var id = $(this).data("id");
-   
-    
-
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "DELETE"
@@ -61,6 +56,5 @@ $(function() {
       }
     );
   });
-
 
 });
