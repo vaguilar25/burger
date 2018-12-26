@@ -72,7 +72,7 @@ The app will store every burger in a database, whether devoured or not.
 
 * Demo Server:
 
-  https://friendfinder25vi.herokuapp.com/
+  https://intense-temple-54106.herokuapp.com/
 
 ## Built With
 
